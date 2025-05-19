@@ -1,16 +1,13 @@
-import LoginForm from "@/components/features/forms/LoginForm";
-import AuthCard from "../components/layouts/AuthCard";
-import AuthFormCard from "@/components/layouts/AuthFormCard";
+import AuthCard from "@/components/auth/AuthCard";
+import LoginForm from "@/components/auth/LoginForm";
 
 const Login = () => {
   return (
-    <AuthCard>
-      <AuthFormCard
-        title={"Login"}
-        description={"Enter your email below to login to your account"}
-      >
-        <LoginForm />
-      </AuthFormCard>
+    <AuthCard
+      title={"Login"}
+      description={"Enter your email below to login to your account"}
+    >
+      <LoginForm />
     </AuthCard>
   );
 };
