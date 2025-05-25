@@ -3,10 +3,10 @@ import type {
   AuthLoginResponseDto,
   AuthSignupRequestDto,
   AuthSignupResponseDto,
-} from "@/common/dtos/auth.dto";
-import type { UserInfo } from "@/common/types/userinfo.type";
-import { decryptAES } from "@/common/utils/crypto-helper";
-import { localStorageUtil } from "@/common/utils/local-storage";
+} from "@/commons/dtos/auth.dto";
+import type { UserInfo } from "@/commons/types/userinfo.type";
+import { decryptAES } from "@/commons/utils/crypto-helper";
+import { localStorageUtil } from "@/commons/utils/local-storage";
 import config from "@/config";
 import axios from "axios";
 import { Cookies } from "react-cookie";
@@ -28,7 +28,7 @@ export type FailureCallback = (error: Error) => void;
 export const login = (
   body: AuthLoginRequestDto,
   onSuccess: SuccessLoginCallback,
-  onFailure: FailureCallback,
+  onFailure: FailureCallback
 ): void => {
   axios
     .post(`${config.SERVER_URI}/auth/login`, body, { withCredentials: true })
@@ -63,7 +63,7 @@ export const login = (
 export const signup = (
   body: AuthSignupRequestDto,
   onSuccess: SuccessSignupCallback,
-  onFailure: FailureCallback,
+  onFailure: FailureCallback
 ): void => {
   axios
     .post(`${config.SERVER_URI}/auth/signup`, body, { withCredentials: true })

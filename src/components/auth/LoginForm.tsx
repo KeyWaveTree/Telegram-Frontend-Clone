@@ -31,10 +31,10 @@ const LoginForm = () => {
         ({ message }) => {
           // 로그인 실패 시 에러 메시지 표시
           alert(message);
-        },
+        }
       );
     },
-    [username, password], // 의존성 배열: username 또는 password가 변경되면 handleSubmit을 재생성
+    [username, password] // 의존성 배열: username 또는 password가 변경되면 handleSubmit을 재생성
   );
 
   return (

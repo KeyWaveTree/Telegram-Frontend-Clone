@@ -31,11 +31,11 @@ const SignupForm = () => {
         },
         ({ message }) => {
           alert(message);
-        },
+        }
       );
     },
     // useCallback 훅의 의존성 배열, username과 password 값이 변경될 때마다 함수 재생성
-    [username, password, nickname],
+    [username, password, nickname]
   );
   return (
     <form onSubmit={handleSubmit}>

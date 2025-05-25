@@ -1,16 +1,22 @@
 import { MessageSquare } from "lucide-react";
 import { SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
+import { NavLink } from "react-router";
 
 export interface ChatRoomElementProps {
   roomname: string;
   lastMessage: string;
+  roomId: string;
 }
 
-const ChatRoomElement = ({ roomname, lastMessage }: ChatRoomElementProps) => {
+const ChatRoomElement = ({
+  roomname,
+  lastMessage,
+  roomId,
+}: ChatRoomElementProps) => {
   return (
     <SidebarMenuItem>
       <SidebarMenuButton size="lg" asChild>
-        <a href="#">
+        <NavLink to={roomId}>
           <div className="flex aspect-square size-8 items-center justify-center rounded-full">
             <MessageSquare className="size-4" />
           </div>
@@ -18,7 +24,7 @@ const ChatRoomElement = ({ roomname, lastMessage }: ChatRoomElementProps) => {
             <span className="truncate font-medium">{roomname}</span>
             <span className="truncate text-xs">{lastMessage}</span>
           </div>
-        </a>
+        </NavLink>
       </SidebarMenuButton>
     </SidebarMenuItem>
   );
